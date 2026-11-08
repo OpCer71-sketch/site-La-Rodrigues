@@ -26,5 +26,4 @@ e acesse http://localhost:8000.
 
 ## Publicar
 
-Por ser estático, pode ir para GitHub Pages, Netlify, Vercel ou qualquer hospedagem:
-basta enviar o conteúdo deste repositório.
+Publicado pelo GitHub Pages em https://cantoralaurarodrigues.com.br (o arquivo `CNAME` guarda o domínio).
