@@ -234,16 +234,14 @@ p { margin: 0 0 1.1em; }
   box-shadow: 0 18px 50px -30px rgba(123, 74, 158, 0.45);
 }
 
-.galeria {
+.fotos-apresentacao {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 3rem;
+  grid-template-columns: 3fr 2fr;
+  gap: 14px;
+  padding: 0 0 3rem;
 }
-.galeria .foto { aspect-ratio: 1 / 1; }
-.galeria a { display: block; text-decoration: none; }
-.galeria a .foto img { transition: transform 0.6s ease, opacity 0.3s; }
-.galeria a:hover .foto img { transform: scale(1.04); opacity: 0.9; }
+.fotos-apresentacao .foto { height: clamp(260px, 32vw, 440px); }
+.fotos-apresentacao .foto:last-child img { object-position: center 25%; }
 
 /* ---------- Currículo ---------- */
 .cabecalho-pagina { padding: clamp(4rem, 9vw, 7rem) 0 clamp(2rem, 4vw, 3rem); }
@@ -405,7 +403,9 @@ p { margin: 0 0 1.1em; }
   .curriculo-intro .foto { max-width: 420px; }
   .servicos { grid-template-columns: 1fr; gap: 2.5rem; }
   .bloco { grid-template-columns: 1fr; gap: 0.5rem; }
-  .galeria { grid-template-columns: repeat(2, 1fr); }
+  .fotos-apresentacao { grid-template-columns: 1fr; }
+  .fotos-apresentacao .foto { height: auto; aspect-ratio: 3 / 2; }
+  .fotos-apresentacao .foto:last-child { aspect-ratio: 1 / 1; }
   .hero-passaro { width: 130px; top: -70px; right: 4%; }
   .hero-ramo { display: none; }
   .moldura-ramo { width: 150px; right: -20px; bottom: -40px; }

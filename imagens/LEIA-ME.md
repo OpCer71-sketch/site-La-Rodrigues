@@ -7,7 +7,7 @@ Para trocar uma foto, substitua o arquivo mantendo o mesmo nome. Se um arquivo f
 |---|---|---|
 | `destaque.jpg` | Abertura da página inicial (metade direita da tela) | Vertical, foto forte dela cantando |
 | `sobre.jpg` | Seção "Sobre" da página inicial | Vertical 4:5, retrato |
-| `galeria-1.jpg` a `galeria-6.jpg` | Galeria "Momentos" da página inicial | Quadrada (já recortada) |
+| `apresentacao-1.jpg` e `apresentacao-2.jpg` | Fotos dela cantando, na página Currículo | Horizontal 3:2 e quadrada |
 | `curriculo.jpg` | Página Currículo | Vertical 3:4, retrato |
 | `contato.jpg` | Página Contato | Vertical 4:5 |
 
