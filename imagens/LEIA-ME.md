@@ -12,3 +12,11 @@ Para trocar uma foto, substitua o arquivo mantendo o mesmo nome. Se um arquivo f
 | `contato.jpg` | Página Contato | Vertical 4:5 |
 
 Dica: fotos com até 1600 px no lado maior e cerca de 300 KB deixam o site rápido.
+
+## Ornamentos (`imagens/ornamentos/`)
+
+| Arquivo | O que é |
+|---|---|
+| `beija-flor.png` / `beija-flor-esq.png` | Beija-flor com fundo transparente, virado para a direita e para a esquerda |
+| `ramo.svg` | Ramo com folhas e flores (verde, roxo e amarelo) |
+| `divisor.svg` | Enfeite de folhas e flor usado abaixo dos títulos |

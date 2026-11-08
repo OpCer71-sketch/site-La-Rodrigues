@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" aria-hidden="true">
+  <defs>
+    <linearGradient id="fd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fbf7a"/>
+      <stop offset="1" stop-color="#2f6f4e"/>
+    </linearGradient>
+    <path id="f" d="M0 0 C 8 -8, 24 -8, 32 0 C 24 8, 8 8, 0 0 Z"/>
+  </defs>
+  <path d="M8 20 H 86 M 134 20 H 212" stroke="#4d7f5c" stroke-width="1.4" stroke-linecap="round"/>
+  <use href="#f" fill="url(#fd)" transform="translate(56 20) rotate(-28)"/>
+  <use href="#f" fill="url(#fd)" transform="translate(164 20) rotate(208)"/>
+  <use href="#f" fill="url(#fd)" transform="translate(70 20) rotate(24) scale(0.7)"/>
+  <use href="#f" fill="url(#fd)" transform="translate(150 20) rotate(156) scale(0.7)"/>
+  <g transform="translate(110 20)">
+    <g fill="#9b6fc2">
+      <ellipse cx="0" cy="-9" rx="5.5" ry="9"/>
+      <ellipse cx="0" cy="-9" rx="5.5" ry="9" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-9" rx="5.5" ry="9" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-9" rx="5.5" ry="9" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-9" rx="5.5" ry="9" transform="rotate(288)"/>
+    </g>
+    <circle r="4.5" fill="#f2c14e"/>
+  </g>
+</svg>
