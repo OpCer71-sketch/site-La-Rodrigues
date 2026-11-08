@@ -1,4 +1,4 @@
-# Site oficial da cantora La Rodrigues
+# Site oficial da cantora Laura Rodrigues
 
 Site estático (HTML, CSS e JavaScript puros, sem instalação) com três páginas:
 
@@ -7,13 +7,11 @@ Site estático (HTML, CSS e JavaScript puros, sem instalação) com três págin
 - `contato.html`: contatos e formulário de orçamento, que abre o WhatsApp com a mensagem pronta
   (ou o e-mail, se o WhatsApp não estiver configurado)
 
-## O que falta preencher
+## Como atualizar
 
-1. **Contatos:** edite `js/config.js` (WhatsApp, e-mail, Instagram).
-2. **Fotos:** coloque as fotos em `imagens/`, com os nomes listados em `imagens/LEIA-ME.md`.
-3. **Currículo:** troque os trechos entre colchetes `[...]` em `curriculo.html`
-   (procure pelos comentários `TROCAR`).
-4. **Nome artístico:** se não for "La Rodrigues", troque em todos os `.html`.
+- **Contatos:** `js/config.js` (WhatsApp, e-mail e Instagram).
+- **Fotos:** substitua os arquivos em `imagens/`, mantendo os nomes listados em `imagens/LEIA-ME.md`.
+- **Currículo e repertório:** `curriculo.html`.
 
 ## Ver no computador
 

@@ -149,7 +149,7 @@ p { margin: 0 0 1.1em; }
   overflow: hidden;
   background: var(--linha);
 }
-.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .foto--vazia::after {
   content: "Foto: " attr(data-arquivo);
   position: absolute;

@@ -4,8 +4,8 @@
  */
 window.SITE_CONFIG = {
   // Número com DDI e DDD, só dígitos. Ex.: 5531999998888
-  whatsapp: "55XXXXXXXXXXX",
-  email: "contato@exemplo.com",
+  whatsapp: "5562986416784",
+  email: "autoralaurarodrigues@gmail.com",
   instagram: "https://www.instagram.com/larodriguesz/",
   instagramUsuario: "@larodriguesz",
 };
