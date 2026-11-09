@@ -13,6 +13,12 @@ Site estático (HTML, CSS e JavaScript puros, sem instalação) com três págin
 - **Fotos:** substitua os arquivos em `imagens/`, mantendo os nomes listados em `imagens/LEIA-ME.md`.
 - **Currículo e repertório:** `curriculo.html`.
 
+## Segurança e privacidade
+
+- Fontes hospedadas no próprio site (`fontes/`, licença SIL OFL): nenhuma requisição a serviços de terceiros.
+- Política de segurança (CSP) em cada página: só carrega arquivos do próprio domínio.
+- Fotos sem metadados (EXIF/GPS). Ao trocar uma foto, salve sem localização.
+
 ## Ver no computador
 
 Abra `index.html` no navegador, ou rode um servidor local:

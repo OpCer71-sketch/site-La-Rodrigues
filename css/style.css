@@ -349,6 +349,14 @@ p { margin: 0 0 1.1em; }
 .rodape a { text-decoration: none; }
 .rodape a:hover { color: var(--amarelo); }
 
+/* ---------- Utilitários ---------- */
+.secao--colada { padding-top: 2rem; }
+.secao--sem-topo { padding-top: 0; }
+.foto--contato { aspect-ratio: 4 / 5; margin-top: 2.5rem; }
+.frase-destaque { font-family: var(--serif); font-size: 1.6rem; line-height: 1.4; }
+.botao--espaco { margin-top: 1rem; }
+.espaco-topo { margin-top: 1rem; }
+
 /* ---------- Ornamentos: beija-flor, folhas e flores ---------- */
 .ornamento { position: absolute; pointer-events: none; user-select: none; }
 .beija-flor { animation: pairar 4.5s ease-in-out infinite; filter: drop-shadow(0 10px 14px rgba(36, 84, 60, 0.18)); }
