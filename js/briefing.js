@@ -236,7 +236,7 @@
       ["3. Preferências musicais", [
         ["Estilos preferidos", marcados("estilos")],
         ["Não gostaria de ouvir", valor("evitar")],
-        ["Instrumentos", marcados("instrumentos")],
+        ["Acompanhamento", marcados("instrumentos")],
       ]],
       ["4. Contato", [
         ["Nome", valor("nome")],
