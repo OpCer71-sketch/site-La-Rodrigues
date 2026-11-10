@@ -8,4 +8,8 @@ window.SITE_CONFIG = {
   email: "autoralaurarodrigues@gmail.com",
   instagram: "https://www.instagram.com/larodriguesz/",
   instagramUsuario: "@larodriguesz",
+
+  // Opcional: código de um formulário do Formspree (https://formspree.io), ex.: "xyzabcde".
+  // Preenchido, o briefing também chega por e-mail. Vazio, o briefing é enviado pelo WhatsApp.
+  formspree: "",
 };

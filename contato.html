@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contato · Laura Rodrigues</title>
-  <meta name="description" content="Solicite um orçamento para o seu casamento ou evento com a cantora Laura Rodrigues. Valores a combinar.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="description" content="Monte o briefing do seu casamento ou evento e receba uma proposta personalizada da cantora Laura Rodrigues. Atende o Sul de Minas. Valores a combinar.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://formspree.io; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preload" href="fontes/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fontes.css">
@@ -39,13 +39,39 @@
         <span class="rotulo">Contato</span>
         <h1>Vamos conversar</h1>
         <img class="divisor divisor--esq" src="imagens/ornamentos/divisor.svg" alt="" aria-hidden="true">
-        <p>Conte um pouco sobre o seu evento. Os valores são combinados de acordo com a data, o local, a duração e o formato da apresentação.</p>
+        <p>Conte como você imagina o seu evento. Com essas informações, a Laura monta uma proposta personalizada. Os valores são combinados de acordo com a data, o local, a duração e o formato da apresentação.</p>
       </div>
     </section>
 
     <section class="secao secao--colada">
+      <div class="container">
+        <div class="formatos surgir" aria-labelledby="formatos-titulo">
+          <h2 id="formatos-titulo" class="formatos-titulo">Formatos de apresentação</h2>
+          <ul class="formatos-lista">
+            <li class="formato">
+              <span class="formato-numero" aria-hidden="true">01</span>
+              <h3>Cerimônia</h3>
+              <p>Entrada dos padrinhos e da noiva, salmos, momentos da celebração e a saída dos noivos.</p>
+            </li>
+            <li class="formato">
+              <span class="formato-numero" aria-hidden="true">02</span>
+              <h3>Coquetel e recepção</h3>
+              <p>Música ao vivo para receber os convidados com leveza enquanto a festa começa.</p>
+            </li>
+            <li class="formato">
+              <span class="formato-numero" aria-hidden="true">03</span>
+              <h3>Celebrações</h3>
+              <p>Aniversários, 15 anos, bodas, batizados, inaugurações e formaturas.</p>
+            </li>
+          </ul>
+          <p class="formatos-videos" data-link-videos hidden><a class="link-sublinhado" href="index.html#videos">Assista às apresentações</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--sem-topo">
       <div class="container contato">
-        <div class="surgir">
+        <aside class="surgir" aria-label="Outras formas de contato">
           <div class="contato-item">
             <span class="rotulo">WhatsApp</span>
             <a data-link="whatsapp" href="#" target="_blank" rel="noopener">Enviar mensagem</a>
@@ -69,43 +95,211 @@
           <div class="foto foto--contato surgir">
             <img src="imagens/contato.jpg" alt="Laura Rodrigues em apresentação" loading="lazy">
           </div>
-        </div>
+        </aside>
 
-        <form id="form-orcamento" class="formulario surgir" novalidate>
-          <div class="campo campo--inteiro">
-            <label for="nome">Seu nome</label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
+        <div class="briefing-area surgir">
+          <form id="briefing" class="briefing" novalidate aria-labelledby="briefing-titulo">
+            <h2 id="briefing-titulo" class="briefing-titulo">Briefing do seu evento</h2>
+            <p class="suave briefing-intro">Quatro passos rápidos para a Laura entender o seu sonho e preparar uma proposta feita sob medida.</p>
+
+            <div class="briefing-progresso">
+              <ol class="briefing-etapas">
+                <li data-indicador="1"><span class="briefing-num">1</span><span class="briefing-nome">O evento</span></li>
+                <li data-indicador="2"><span class="briefing-num">2</span><span class="briefing-nome">Atmosfera</span></li>
+                <li data-indicador="3"><span class="briefing-num">3</span><span class="briefing-nome">Músicas</span></li>
+                <li data-indicador="4"><span class="briefing-num">4</span><span class="briefing-nome">Você</span></li>
+              </ol>
+              <div class="briefing-barra" aria-hidden="true"><span class="briefing-barra-preenchida"></span></div>
+              <p id="briefing-status" class="sr-only" aria-live="polite"></p>
+            </div>
+
+            <!-- Etapa 1 -->
+            <fieldset class="etapa" data-etapa="1" data-nome="Sobre o evento">
+              <legend class="etapa-titulo" tabindex="-1">Conte um pouco sobre o seu grande dia</legend>
+              <div class="formulario">
+                <div class="campo campo--inteiro">
+                  <label for="b-tipo">Que tipo de evento você está planejando? <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <select id="b-tipo" name="tipo" required data-outro="b-tipo-outro" aria-describedby="erro-b-tipo">
+                    <option value="">Selecione</option>
+                    <option>Casamento</option>
+                    <option>Aniversário / 15 anos</option>
+                    <option>Bodas</option>
+                    <option>Batizado</option>
+                    <option>Inauguração / Formatura</option>
+                    <option>Outro</option>
+                  </select>
+                  <p class="erro" id="erro-b-tipo"></p>
+                </div>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="b-tipo" hidden>
+                  <label for="b-tipo-outro">Qual tipo de evento? <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <input id="b-tipo-outro" name="tipo_outro" type="text" maxlength="80" aria-describedby="erro-b-tipo-outro">
+                  <p class="erro" id="erro-b-tipo-outro"></p>
+                </div>
+                <div class="campo">
+                  <label for="b-data">Data do evento</label>
+                  <input id="b-data" name="data" type="date" aria-describedby="dica-b-data erro-b-data">
+                  <p class="dica" id="dica-b-data">Ainda não definiu? Pode deixar em branco.</p>
+                  <p class="erro" id="erro-b-data"></p>
+                </div>
+                <div class="campo">
+                  <label for="b-convidados">Número estimado de convidados</label>
+                  <input id="b-convidados" name="convidados" type="number" min="1" max="5000" step="1" inputmode="numeric" placeholder="Ex.: 120" aria-describedby="erro-b-convidados">
+                  <p class="erro" id="erro-b-convidados"></p>
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-local">Cidade e local da celebração <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <input id="b-local" name="local" type="text" required maxlength="120" placeholder="Ex.: São Lourenço, Igreja Matriz" aria-describedby="dica-b-local erro-b-local">
+                  <p class="dica" id="dica-b-local">A Laura atende o Sul de Minas.</p>
+                  <p class="erro" id="erro-b-local"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Etapa 2 -->
+            <fieldset class="etapa" data-etapa="2" data-nome="O momento e a atmosfera">
+              <legend class="etapa-titulo" tabindex="-1">O momento e a atmosfera</legend>
+              <div class="formulario">
+                <fieldset class="grupo campo--inteiro" data-minimo="1" aria-describedby="erro-b-momentos">
+                  <legend>Em qual momento a música ao vivo é mais importante para você? <span class="obrigatorio" aria-hidden="true">*</span></legend>
+                  <div class="opcoes">
+                    <label><input type="checkbox" name="momentos" value="Entrada da noiva"> Entrada da noiva</label>
+                    <label><input type="checkbox" name="momentos" value="Cerimônia"> Cerimônia</label>
+                    <label><input type="checkbox" name="momentos" value="Coquetel / Recepção"> Coquetel / Recepção</label>
+                    <label><input type="checkbox" name="momentos" value="Festa"> Festa</label>
+                    <label><input type="checkbox" name="momentos" value="Outro" data-outro="b-momentos-outro"> Outro</label>
+                  </div>
+                  <p class="erro" id="erro-b-momentos"></p>
+                </fieldset>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="momentos" hidden>
+                  <label for="b-momentos-outro">Qual outro momento?</label>
+                  <input id="b-momentos-outro" name="momentos_outro" type="text" maxlength="80">
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-clima">Que clima você imagina para o seu evento? <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <select id="b-clima" name="clima" required data-outro="b-clima-outro" aria-describedby="erro-b-clima">
+                    <option value="">Selecione</option>
+                    <option>Íntimo e delicado</option>
+                    <option>Alegre e animado</option>
+                    <option>Sofisticado e elegante</option>
+                    <option>Romântico</option>
+                    <option>Outro</option>
+                  </select>
+                  <p class="erro" id="erro-b-clima"></p>
+                </div>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="b-clima" hidden>
+                  <label for="b-clima-outro">Como você descreveria o clima?</label>
+                  <input id="b-clima-outro" name="clima_outro" type="text" maxlength="80">
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-especial">Já tem alguma música especial em mente? <span class="opcional">(opcional)</span></label>
+                  <textarea id="b-especial" name="musica_especial" maxlength="600" placeholder="Ex.: a música da entrada da noiva, uma canção que marcou a história de vocês..."></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Etapa 3 -->
+            <fieldset class="etapa" data-etapa="3" data-nome="Preferências musicais">
+              <legend class="etapa-titulo" tabindex="-1">Preferências musicais</legend>
+              <div class="formulario">
+                <fieldset class="grupo campo--inteiro">
+                  <legend>Estilos que você mais gosta <span class="opcional">(opcional)</span></legend>
+                  <div class="opcoes">
+                    <label><input type="checkbox" name="estilos" value="MPB"> MPB</label>
+                    <label><input type="checkbox" name="estilos" value="Pop"> Pop</label>
+                    <label><input type="checkbox" name="estilos" value="Sertanejo"> Sertanejo</label>
+                    <label><input type="checkbox" name="estilos" value="Gospel"> Gospel</label>
+                    <label><input type="checkbox" name="estilos" value="Clássicos"> Clássicos</label>
+                    <label><input type="checkbox" name="estilos" value="Jazz / Bossa"> Jazz / Bossa</label>
+                    <label><input type="checkbox" name="estilos" value="Outro" data-outro="b-estilos-outro"> Outro</label>
+                  </div>
+                </fieldset>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="estilos" hidden>
+                  <label for="b-estilos-outro">Qual outro estilo?</label>
+                  <input id="b-estilos-outro" name="estilos_outro" type="text" maxlength="80">
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-evitar">Há alguma música ou estilo que você <strong>não</strong> gostaria de ouvir? <span class="opcional">(opcional)</span></label>
+                  <textarea id="b-evitar" name="evitar" maxlength="600"></textarea>
+                </div>
+                <fieldset class="grupo campo--inteiro">
+                  <legend>Gostaria de incluir algum instrumento específico? <span class="opcional">(opcional)</span></legend>
+                  <div class="opcoes">
+                    <label><input type="checkbox" name="instrumentos" value="Violão"> Violão</label>
+                    <label><input type="checkbox" name="instrumentos" value="Piano"> Piano</label>
+                    <label><input type="checkbox" name="instrumentos" value="Violino"> Violino</label>
+                    <label><input type="checkbox" name="instrumentos" value="Outro" data-outro="b-instrumentos-outro"> Outro</label>
+                  </div>
+                </fieldset>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="instrumentos" hidden>
+                  <label for="b-instrumentos-outro">Qual outro instrumento?</label>
+                  <input id="b-instrumentos-outro" name="instrumentos_outro" type="text" maxlength="80">
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Etapa 4 -->
+            <fieldset class="etapa" data-etapa="4" data-nome="Sobre você">
+              <legend class="etapa-titulo" tabindex="-1">Agora, conte sobre você</legend>
+              <div class="formulario">
+                <div class="campo campo--inteiro">
+                  <label for="b-nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <input id="b-nome" name="nome" type="text" required maxlength="100" autocomplete="name" aria-describedby="erro-b-nome">
+                  <p class="erro" id="erro-b-nome"></p>
+                </div>
+                <div class="campo">
+                  <label for="b-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <input id="b-email" name="email" type="email" required maxlength="120" autocomplete="email" inputmode="email" aria-describedby="erro-b-email">
+                  <p class="erro" id="erro-b-email"></p>
+                </div>
+                <div class="campo">
+                  <label for="b-whatsapp">WhatsApp <span class="obrigatorio" aria-hidden="true">*</span></label>
+                  <input id="b-whatsapp" name="whatsapp" type="tel" required autocomplete="tel-national" inputmode="numeric" placeholder="(35) 99999-9999" maxlength="15" data-mascara="telefone" aria-describedby="erro-b-whatsapp">
+                  <p class="erro" id="erro-b-whatsapp"></p>
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-origem">Como conheceu o trabalho da Laura?</label>
+                  <select id="b-origem" name="origem" data-outro="b-origem-outro">
+                    <option value="">Selecione</option>
+                    <option>Instagram</option>
+                    <option>Indicação</option>
+                    <option>Google</option>
+                    <option>Outro</option>
+                  </select>
+                </div>
+                <div class="campo campo--inteiro campo-outro" data-outro-de="b-origem" hidden>
+                  <label for="b-origem-outro">Por onde?</label>
+                  <input id="b-origem-outro" name="origem_outro" type="text" maxlength="80">
+                </div>
+                <div class="campo campo--inteiro">
+                  <label for="b-detalhes">Algum detalhe que a Laura precisa saber? <span class="opcional">(opcional)</span></label>
+                  <textarea id="b-detalhes" name="detalhes" maxlength="1000"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="briefing-nav">
+              <button type="button" class="botao botao--claro" data-anterior hidden>Anterior</button>
+              <button type="button" class="botao" data-proximo>Próximo</button>
+              <button type="submit" class="botao" data-enviar hidden>Enviar briefing</button>
+            </div>
+            <p class="nota briefing-nota" data-nota-envio>Campos com <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios. Ao enviar, o WhatsApp da Laura abre com o seu briefing já escrito: é só tocar em enviar.</p>
+          </form>
+
+          <div class="briefing-sucesso" id="briefing-sucesso" tabindex="-1" hidden>
+            <img class="beija-flor sucesso-passaro" src="imagens/ornamentos/beija-flor.png" alt="" aria-hidden="true">
+            <h2>Obrigada!</h2>
+            <p>A Laura entrará em contato em breve com uma proposta feita sob medida para você.</p>
+            <p class="suave" data-sucesso-whatsapp>O seu briefing foi aberto no WhatsApp. Se a conversa não abriu, toque no botão abaixo e depois em enviar.</p>
+            <div class="sucesso-acoes">
+              <a class="botao" data-sucesso-link href="#" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+              <button type="button" class="botao botao--claro" data-novo-briefing>Preencher outro briefing</button>
+            </div>
           </div>
-          <div class="campo">
-            <label for="tipo">Tipo de evento</label>
-            <select id="tipo" name="tipo" required>
-              <option value="">Selecione</option>
-              <option>Casamento</option>
-              <option>Aniversário / 15 anos</option>
-              <option>Bodas / renovação de votos</option>
-              <option>Batizado</option>
-              <option>Inauguração</option>
-              <option>Formatura</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="campo">
-            <label for="data">Data do evento</label>
-            <input id="data" name="data" type="date">
-          </div>
-          <div class="campo campo--inteiro">
-            <label for="local">Cidade e local</label>
-            <input id="local" name="local" type="text" placeholder="Ex.: São Lourenço, Igreja Matriz">
-          </div>
-          <div class="campo campo--inteiro">
-            <label for="mensagem">Conte mais</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Momentos em que deseja música, músicas preferidas, número de convidados..."></textarea>
-          </div>
-          <div class="campo--inteiro">
-            <button type="submit" class="botao">Solicitar orçamento</button>
-          </div>
-          <p class="nota">Ao enviar, abriremos uma conversa já com as informações preenchidas.</p>
-        </form>
+
+          <noscript>
+            <p class="nota">Para usar o briefing, ative o JavaScript do navegador. Você também pode falar com a Laura pelo WhatsApp (62) 98641-6784 ou pelo e-mail autoralaurarodrigues@gmail.com.</p>
+          </noscript>
+        </div>
       </div>
     </section>
   </main>
@@ -123,5 +317,7 @@
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/videos-config.js"></script>
+  <script src="js/briefing.js"></script>
 </body>
 </html>

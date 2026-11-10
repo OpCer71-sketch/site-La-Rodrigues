@@ -357,6 +357,150 @@ p { margin: 0 0 1.1em; }
 .botao--espaco { margin-top: 1rem; }
 .espaco-topo { margin-top: 1rem; }
 
+/* ---------- Acessibilidade ---------- */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+:focus-visible { outline: 2px solid var(--roxo); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+/* ---------- Formatos de apresentação (contato) ---------- */
+.formatos { border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); padding: 2.6rem 0; }
+.formatos-titulo { font-size: 1.9rem; margin-bottom: 1.6rem; }
+.formatos-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
+.formato h3 { font-size: 1.45rem; color: var(--verde-escuro); margin-bottom: 0.4rem; }
+.formato p { color: var(--texto-suave); font-size: 0.95rem; margin: 0; }
+.formato-numero { display: block; font-family: var(--serif); font-size: 1.1rem; color: var(--roxo); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+.formato:nth-child(2) .formato-numero { color: var(--verde); }
+.formato:nth-child(3) .formato-numero { color: #b8861a; }
+.formatos-videos { margin: 1.8rem 0 0; }
+
+/* ---------- Briefing em etapas ---------- */
+.briefing-area { min-width: 0; }
+.briefing, .briefing-sucesso { scroll-margin-top: 100px; }
+.briefing-titulo { font-size: 2.1rem; margin-bottom: 0.3rem; }
+.briefing-intro { margin-bottom: 1.8rem; }
+.briefing-progresso { margin-bottom: 2rem; }
+.briefing-etapas { list-style: none; margin: 0 0 0.9rem; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.briefing-etapas li { display: flex; align-items: center; gap: 0.55rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--texto-suave); }
+.briefing-num {
+  flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid #cfc6bb; background: #fff;
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 400; letter-spacing: 0; color: var(--texto-suave);
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.briefing-etapas li.atual { color: var(--texto); }
+.briefing-etapas li.atual .briefing-num { border-color: var(--roxo); background: var(--roxo); color: #fff; }
+.briefing-etapas li.concluida .briefing-num { border-color: var(--verde); background: var(--verde-claro); color: var(--verde-escuro); }
+.briefing-barra { height: 3px; background: var(--linha); overflow: hidden; }
+.briefing-barra-preenchida {
+  display: block; height: 100%; width: 25%;
+  background: linear-gradient(90deg, var(--verde), var(--roxo), var(--amarelo));
+  transition: width 0.5s ease;
+}
+
+.etapa { border: 0; margin: 0; padding: 0; min-width: 0; }
+.etapa-titulo {
+  display: block; padding: 0; margin-bottom: 1.4rem;
+  font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.2; color: var(--verde-escuro);
+}
+.etapa-titulo:focus { outline: none; }
+.briefing--js .etapa { animation: etapa-entra 0.45s ease; }
+@keyframes etapa-entra { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+
+.grupo { border: 0; margin: 0; padding: 0; min-width: 0; }
+.grupo legend, .campo label {
+  font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto-suave);
+  margin-bottom: 0.6rem; padding: 0; line-height: 1.5;
+}
+.campo label strong { font-weight: 400; color: var(--texto); }
+.obrigatorio { color: var(--roxo); }
+.opcional { text-transform: none; letter-spacing: 0; font-size: 0.85rem; color: #9a918a; }
+.dica { font-size: 0.82rem; color: #8c847c; margin: 0.35rem 0 0; }
+.erro { font-size: 0.85rem; color: #a3313f; margin: 0.35rem 0 0; min-height: 0; }
+.erro:empty { display: none; }
+.campo--erro input, .campo--erro select, .campo--erro textarea { border-color: #a3313f; }
+
+.opcoes { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.opcoes label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1rem; border: 1px solid #d8d0c6; background: #fff;
+  font-size: 0.95rem; text-transform: none; letter-spacing: 0; color: var(--texto);
+  cursor: pointer; margin: 0; transition: background 0.2s, border-color 0.2s;
+}
+.opcoes label:hover { border-color: var(--roxo); }
+.opcoes input { accent-color: var(--roxo); width: 16px; height: 16px; margin: 0; }
+.opcoes label:has(input:checked) { background: var(--roxo-claro); border-color: var(--roxo); }
+.opcoes label:has(input:focus-visible) { outline: 2px solid var(--roxo); outline-offset: 2px; }
+.campo--erro .opcoes label { border-color: #d9a3aa; }
+
+.briefing-nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.2rem; }
+.briefing-nav [data-proximo], .briefing-nav [data-enviar] { margin-left: auto; }
+.botao:disabled { opacity: 0.6; cursor: wait; }
+.briefing-nota { margin-top: 1.2rem; font-size: 0.88rem; color: var(--texto-suave); }
+
+.briefing-sucesso {
+  text-align: center; padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  background: #fff; border: 1px solid #ddcfe8;
+  box-shadow: 0 18px 50px -30px rgba(123, 74, 158, 0.45);
+}
+.briefing-sucesso:focus { outline: none; }
+.briefing-sucesso h2 { color: var(--verde-escuro); }
+.sucesso-passaro { width: 120px; margin: 0 auto 1rem; }
+.sucesso-acoes { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.6rem; }
+
+/* ---------- Vídeos ---------- */
+.videos-grade {
+  list-style: none; margin: 3rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem 1.6rem;
+}
+.video-card {
+  position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
+  aspect-ratio: 16 / 9; overflow: hidden; background: var(--verde-escuro);
+}
+.video-card img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform 0.6s ease, opacity 0.3s; }
+.video-card:hover img { transform: scale(1.04); opacity: 0.9; }
+.video-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(36, 84, 60, 0.45)); }
+.video-play {
+  position: absolute; z-index: 1; left: 50%; top: 50%;
+  width: 66px; height: 66px; margin: -33px 0 0 -33px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, background 0.3s;
+}
+.video-play::before {
+  content: ""; position: absolute; left: 26px; top: 21px;
+  border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent var(--roxo);
+}
+.video-card:hover .video-play, .video-card:focus-visible .video-play { transform: scale(1.08); background: #fff; }
+.video-titulo { font-size: 1.45rem; margin: 0.9rem 0 0.2rem; color: var(--verde-escuro); }
+.video-desc { font-size: 0.92rem; color: var(--texto-suave); margin: 0; }
+
+.video-modal {
+  width: min(960px, 94vw); max-width: none; max-height: 94vh; padding: 0; border: 0;
+  background: transparent; color: #fff; overflow: visible;
+}
+.video-modal--vertical { width: min(480px, 94vw); }
+.video-modal::backdrop { background: rgba(20, 32, 26, 0.88); backdrop-filter: blur(3px); }
+.video-modal-topo { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
+.video-modal-titulo { font-size: 1.5rem; margin: 0; color: #fff; }
+.video-modal-fechar {
+  flex: none; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.6);
+  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.55rem 1rem; cursor: pointer;
+}
+.video-modal-fechar:hover { background: #fff; color: var(--verde-escuro); }
+.video-modal-fechar:focus-visible { outline-color: var(--amarelo); }
+.video-modal-player { background: #000; display: flex; justify-content: center; }
+.video-modal-player video { display: block; width: 100%; max-height: 80vh; background: #000; }
+.video-modal-player video:focus { outline: none; }
+.video-iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+
 /* ---------- Ornamentos: beija-flor, folhas e flores ---------- */
 .ornamento { position: absolute; pointer-events: none; user-select: none; }
 .beija-flor { animation: pairar 4.5s ease-in-out infinite; filter: drop-shadow(0 10px 14px rgba(36, 84, 60, 0.18)); }
@@ -440,5 +584,15 @@ p { margin: 0 0 1.1em; }
   .nav li { width: 100%; text-align: center; }
   .nav a { display: inline-block; padding: 0.8rem 0; }
   .formulario { grid-template-columns: 1fr; }
+  .formatos-lista { grid-template-columns: 1fr; gap: 1.6rem; }
+  .briefing-etapas { display: flex; gap: 0.6rem; }
+  .briefing-etapas li { flex: none; }
+  .briefing-etapas li.atual { flex: 1 1 auto; }
+  .briefing-nome { display: none; }
+  .briefing-etapas li.atual .briefing-nome { display: inline; }
+  .briefing-nav .botao { flex: 1 1 auto; text-align: center; }
+  .videos-grade { grid-template-columns: 1fr; }
+  .video-modal { width: 100vw; }
+  .video-modal-caixa { padding: 0 0.8rem; }
   .linha-tempo li { grid-template-columns: 1fr; gap: 0.1rem; }
 }

@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <link rel="canonical" href="https://cantoralaurarodrigues.com.br/">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preload" href="fontes/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fontes.css">
@@ -133,6 +133,19 @@
       </div>
     </section>
 
+    <!-- Vídeos (aparece quando houver vídeos em js/videos-config.js) -->
+    <section class="secao secao--alt" id="videos" aria-labelledby="videos-titulo" hidden>
+      <div class="container">
+        <div class="centro estreito surgir">
+          <span class="rotulo">Ao vivo</span>
+          <h2 id="videos-titulo">Vídeos</h2>
+          <img class="divisor" src="imagens/ornamentos/divisor.svg" alt="" aria-hidden="true">
+          <p class="suave">Um pouco da emoção das apresentações. Toque em um vídeo para assistir.</p>
+        </div>
+        <ul class="videos-grade surgir" data-videos></ul>
+      </div>
+    </section>
+
     <!-- Instagram -->
     <section class="secao secao--lilas faixa-instagram">
       <div class="container surgir">
@@ -160,5 +173,7 @@
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/videos-config.js"></script>
+  <script src="js/videos.js"></script>
 </body>
 </html>

@@ -68,38 +68,4 @@
   } else {
     document.querySelectorAll(".surgir").forEach(function (el) { el.classList.add("visivel"); });
   }
-
-  // Formulário de orçamento: monta a mensagem e abre WhatsApp (ou e-mail)
-  var form = document.querySelector("#form-orcamento");
-  if (form) {
-    form.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      if (!form.reportValidity()) return;
-      var d = new FormData(form);
-      var dataEvento = d.get("data");
-      if (dataEvento) {
-        var p = dataEvento.split("-");
-        dataEvento = p[2] + "/" + p[1] + "/" + p[0];
-      }
-      var linhas = [
-        "Olá! Gostaria de um orçamento.",
-        "",
-        "Nome: " + d.get("nome"),
-        "Tipo de evento: " + d.get("tipo"),
-        "Data: " + (dataEvento || "a definir"),
-        "Cidade/local: " + (d.get("local") || "a definir"),
-      ];
-      if (d.get("mensagem")) linhas.push("", d.get("mensagem"));
-      var texto = linhas.join("\n");
-
-      if (temWhatsapp) {
-        window.open(linkWhatsapp(texto), "_blank", "noopener");
-      } else {
-        window.location.href =
-          "mailto:" + cfg.email +
-          "?subject=" + encodeURIComponent("Orçamento - " + d.get("tipo")) +
-          "&body=" + encodeURIComponent(texto);
-      }
-    });
-  }
 })();
