@@ -4,7 +4,7 @@ Site estático (HTML, CSS e JavaScript puros, sem instalação) com três págin
 
 - `index.html`: página inicial (abertura, sobre, serviços, valores a combinar, galeria e Instagram)
 - `curriculo.html`: trajetória, formação, experiência, repertório e formações
-- `contato.html`: formatos de apresentação e **briefing em 4 etapas** (evento, atmosfera, músicas, contato),
+- `contato.html`: formatos de apresentação e **briefing em 3 etapas** (evento, atmosfera, contato),
   que abre o WhatsApp da Laura com o briefing escrito (ou o e-mail, se o WhatsApp não estiver configurado)
 
 ## Como atualizar

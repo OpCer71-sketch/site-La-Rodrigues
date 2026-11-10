@@ -1,6 +1,6 @@
 /*
  * Briefing em etapas da página de contato.
- * - 4 etapas com barra de progresso, botões Anterior/Próximo e validação em tempo real.
+ * - 3 etapas com barra de progresso, botões Anterior/Próximo e validação em tempo real.
  * - Envio: Formspree (se configurado em js/config.js) e/ou WhatsApp com o briefing escrito.
  */
 (function () {
@@ -231,14 +231,8 @@
       ["2. O momento e a atmosfera", [
         ["Momentos com música ao vivo", marcados("momentos")],
         ["Clima", comOutro("clima")],
-        ["Música especial", valor("musica_especial")],
       ]],
-      ["3. Preferências musicais", [
-        ["Estilos preferidos", marcados("estilos")],
-        ["Não gostaria de ouvir", valor("evitar")],
-        ["Acompanhamento", marcados("instrumentos")],
-      ]],
-      ["4. Contato", [
+      ["3. Contato", [
         ["Nome", valor("nome")],
         ["E-mail", valor("email")],
         ["WhatsApp", valor("whatsapp")],

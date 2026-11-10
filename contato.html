@@ -100,14 +100,13 @@
         <div class="briefing-area surgir">
           <form id="briefing" class="briefing" novalidate aria-labelledby="briefing-titulo">
             <h2 id="briefing-titulo" class="briefing-titulo">Briefing do seu evento</h2>
-            <p class="suave briefing-intro">Quatro passos rápidos para a Laura entender o seu sonho e preparar uma proposta feita sob medida.</p>
+            <p class="suave briefing-intro">Três passos rápidos para a Laura entender o seu sonho e preparar uma proposta feita sob medida.</p>
 
             <div class="briefing-progresso">
               <ol class="briefing-etapas">
                 <li data-indicador="1"><span class="briefing-num">1</span><span class="briefing-nome">O evento</span></li>
                 <li data-indicador="2"><span class="briefing-num">2</span><span class="briefing-nome">Atmosfera</span></li>
-                <li data-indicador="3"><span class="briefing-num">3</span><span class="briefing-nome">Músicas</span></li>
-                <li data-indicador="4"><span class="briefing-num">4</span><span class="briefing-nome">Você</span></li>
+                <li data-indicador="3"><span class="briefing-num">3</span><span class="briefing-nome">Você</span></li>
               </ol>
               <div class="briefing-barra" aria-hidden="true"><span class="briefing-barra-preenchida"></span></div>
               <p id="briefing-status" class="sr-only" aria-live="polite"></p>
@@ -190,48 +189,11 @@
                   <label for="b-clima-outro">Como você descreveria o clima?</label>
                   <input id="b-clima-outro" name="clima_outro" type="text" maxlength="80">
                 </div>
-                <div class="campo campo--inteiro">
-                  <label for="b-especial">Já tem alguma música especial em mente? <span class="opcional">(opcional)</span></label>
-                  <textarea id="b-especial" name="musica_especial" maxlength="600" placeholder="Ex.: a música da entrada da noiva, uma canção que marcou a história de vocês..."></textarea>
-                </div>
               </div>
             </fieldset>
 
             <!-- Etapa 3 -->
-            <fieldset class="etapa" data-etapa="3" data-nome="Preferências musicais">
-              <legend class="etapa-titulo" tabindex="-1">Preferências musicais</legend>
-              <div class="formulario">
-                <fieldset class="grupo campo--inteiro">
-                  <legend>Estilos que você mais gosta <span class="opcional">(opcional)</span></legend>
-                  <div class="opcoes">
-                    <label><input type="checkbox" name="estilos" value="MPB"> MPB</label>
-                    <label><input type="checkbox" name="estilos" value="Sertanejo"> Sertanejo</label>
-                    <label><input type="checkbox" name="estilos" value="Gospel"> Gospel</label>
-                    <label><input type="checkbox" name="estilos" value="Clássicos"> Clássicos</label>
-                    <label><input type="checkbox" name="estilos" value="Jazz / Bossa"> Jazz / Bossa</label>
-                    <label><input type="checkbox" name="estilos" value="Outro" data-outro="b-estilos-outro"> Outro</label>
-                  </div>
-                </fieldset>
-                <div class="campo campo--inteiro campo-outro" data-outro-de="estilos" hidden>
-                  <label for="b-estilos-outro">Qual outro estilo?</label>
-                  <input id="b-estilos-outro" name="estilos_outro" type="text" maxlength="80">
-                </div>
-                <div class="campo campo--inteiro">
-                  <label for="b-evitar">Há alguma música ou estilo que você <strong>não</strong> gostaria de ouvir? <span class="opcional">(opcional)</span></label>
-                  <textarea id="b-evitar" name="evitar" maxlength="600"></textarea>
-                </div>
-                <fieldset class="grupo campo--inteiro">
-                  <legend>Como você prefere o acompanhamento? <span class="opcional">(opcional)</span></legend>
-                  <div class="opcoes">
-                    <label><input type="checkbox" name="instrumentos" value="Violão"> Violão</label>
-                    <label><input type="checkbox" name="instrumentos" value="À capela (só voz)"> À capela (só voz)</label>
-                  </div>
-                </fieldset>
-              </div>
-            </fieldset>
-
-            <!-- Etapa 4 -->
-            <fieldset class="etapa" data-etapa="4" data-nome="Sobre você">
+            <fieldset class="etapa" data-etapa="3" data-nome="Sobre você">
               <legend class="etapa-titulo" tabindex="-1">Agora, conte sobre você</legend>
               <div class="formulario">
                 <div class="campo campo--inteiro">
