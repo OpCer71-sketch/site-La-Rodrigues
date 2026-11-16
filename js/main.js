@@ -1,4 +1,12 @@
 (function () {
+  // Proteção contra clickjacking: o site não pode ser exibido dentro de outro site.
+  // (O GitHub Pages não permite o cabeçalho X-Frame-Options / frame-ancestors.)
+  if (window.top !== window.self) {
+    document.documentElement.classList.add("em-moldura");
+    try { window.top.location.replace(window.self.location.href); } catch (e) { /* bloqueado: o conteúdo fica oculto */ }
+    return;
+  }
+
   var cfg = window.SITE_CONFIG || {};
   var temWhatsapp = /^\d{10,15}$/.test(cfg.whatsapp || "");
 

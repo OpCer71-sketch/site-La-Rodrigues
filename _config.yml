@@ -1,0 +1,5 @@
+# GitHub Pages: arquivos do repositório que NÃO devem ser publicados no site
+exclude:
+  - README.md
+  - ferramentas/
+  - imagens/LEIA-ME.md

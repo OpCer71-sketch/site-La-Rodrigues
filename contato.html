@@ -232,12 +232,19 @@
               </div>
             </fieldset>
 
+            <!-- Campo armadilha: invisível para pessoas, robôs de spam costumam preencher -->
+            <div class="campo-armadilha" aria-hidden="true">
+              <label for="b-site">Deixe este campo em branco</label>
+              <input id="b-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="briefing-nav">
               <button type="button" class="botao botao--claro" data-anterior hidden>Anterior</button>
               <button type="button" class="botao" data-proximo>Próximo</button>
               <button type="submit" class="botao" data-enviar hidden>Enviar briefing</button>
             </div>
             <p class="nota briefing-nota" data-nota-envio>Campos com <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios. Ao enviar, o WhatsApp da Laura abre com o seu briefing já escrito: é só tocar em enviar.</p>
+            <p class="nota briefing-privacidade">Privacidade: as informações deste briefing são enviadas apenas para a Laura e usadas somente para preparar a sua proposta. Este site não guarda nenhum dado e não usa cookies.</p>
           </form>
 
           <div class="briefing-sucesso" id="briefing-sucesso" tabindex="-1" hidden>

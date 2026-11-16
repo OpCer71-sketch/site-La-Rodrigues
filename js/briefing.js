@@ -307,6 +307,8 @@
       return;
     }
     if (enviando || !validarEtapa(atual)) return;
+    // Robô de spam preencheu o campo armadilha: finge que enviou e não faz nada
+    if (valor("_gotcha")) { mostrarSucesso(false, null); return; }
 
     var link = temWhatsapp ? linkWhatsapp() : linkEmail();
     // O WhatsApp abre aqui, ainda dentro do clique, para o navegador não bloquear.

@@ -444,6 +444,15 @@ p { margin: 0 0 1.1em; }
 .briefing-nav [data-proximo], .briefing-nav [data-enviar] { margin-left: auto; }
 .botao:disabled { opacity: 0.6; cursor: wait; }
 .briefing-nota { margin-top: 1.2rem; font-size: 0.88rem; color: var(--texto-suave); }
+.briefing-privacidade { margin-top: 0.6rem; font-size: 0.82rem; color: #8c847c; }
+.campo-armadilha { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+/* Site aberto dentro de uma moldura de outro site: esconde o conteúdo */
+html.em-moldura body > * { display: none !important; }
+html.em-moldura body::before {
+  content: "Por segurança, abra este site diretamente em cantoralaurarodrigues.com.br";
+  display: block; padding: 3rem 1.5rem; text-align: center; font-size: 1.1rem;
+}
 
 .briefing-sucesso {
   text-align: center; padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
